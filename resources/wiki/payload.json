@@ -1,0 +1,42 @@
+{
+    "default": {
+        "slug": "index"
+    },
+    "pages": [
+        {
+            "title": "\uD83C\uDFE1  Accueil",
+            "slug": "index",
+            "file": "index.md"
+        },
+        {
+            "title": "\uD83D\uDCDA Create views and repositories",
+            "slug": "repositories",
+            "file": "repositories.md"
+        },
+        {
+            "title": "\uD83C\uDFB2 Create modele and make CRUD",
+            "slug": "crud",
+            "file": "crud.md"
+        },
+        {
+            "title": "\uD83D\uDCE5 Add Import to view/repository",
+            "slug": "imports",
+            "file": "imports.md"
+        },
+        {
+            "title": "\uD83D\uDCE4 Add Export  to view/repository",
+            "slug": "exports",
+            "file": "exports.md"
+        },
+		{
+            "title": "\uD83D\uDD27 Make tests with postman/newman",
+            "slug": "test",
+            "file": "test.md"
+        },
+        {
+            "title": "✍️ WIKI",
+            "slug": "wiki",
+            "file": "wiki.md"
+        }
+    ]
+}

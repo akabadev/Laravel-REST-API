@@ -1,0 +1,38 @@
+<p-dialog [(visible)]="display" [header]="(user ? 'Modification' : 'Ajout') + ' d\'un utilisateur'" [modal]="true"
+  [maximizable]="true" appendTo="body" (onHide)="canceled.emit()" [breakpoints]="[{'960px': '75vw', '640px': '100vw'}]">
+  <ng-template pTemplate="content">
+    <form (ngSubmit)="submit()" [formGroup]="userForm" class="addEditForm">
+      <div class="form-group" *ngIf="userForm.controls.id.value">
+        <label for="name">Identifiant</label>
+        <input type="text" pInputText id="id" formControlName="id"
+          [ngClass]="{'ng-invalid ng-dirty': userForm.controls.id.touched && userForm.controls.id.errors}" />
+        <p class="p-error" *ngIf="userForm.controls.id.touched && userForm.controls.id.hasError('required')">Ce champ
+          est requis</p>
+      </div>
+      <div class="form-group" [class.two-col]="!userForm.controls.id.value">
+        <label for="name">Nom</label>
+        <input type="text" pInputText id="name" formControlName="name"
+          [ngClass]="{'ng-invalid ng-dirty': userForm.controls.name.touched && userForm.controls.name.errors}" />
+        <p class="p-error" *ngIf="userForm.controls.name.touched && userForm.controls.name.hasError('required')">Ce
+          champ est requis</p>
+      </div>
+      <div class="form-group two-col">
+        <label for="name">Email</label>
+        <input type="text" pInputText id="email" formControlName="email"
+          [ngClass]="{'ng-invalid ng-dirty': userForm.controls.email.touched && userForm.controls.email.errors}" />
+        <p class="p-error" *ngIf="userForm.controls.email.touched && userForm.controls.email.hasError('required')">Ce
+          champ est requis</p>
+        <p class="p-error" *ngIf="userForm.controls.email.touched && userForm.controls.email.hasError('email')">Le
+          format n'est pas correct</p>
+      </div>
+      <p-toggleButton formControlName="enable" [onIcon]="'pi pi-check'" offIcon="pi pi-times" onLabel="Actif"
+        offLabel="Inactif">
+      </p-toggleButton>
+    </form>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-text m-r"
+      (click)="canceled.emit"></button>
+    <button pButton pRipple label="Valider" icon="pi pi-check" (click)="submit()" class="p-button-text"></button>
+  </ng-template>
+</p-dialog>

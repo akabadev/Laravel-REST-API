@@ -1,0 +1,171 @@
+@import '../../../styles/variables';
+
+#navbar {
+  height: 100%;
+  width: var(--navbar-width);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--bluegray-900);
+  transition: width 0.3s ease;
+  z-index: 100;
+  overflow: hidden;
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    .user {
+      margin-top: auto;
+      padding: 0.5em 1em;
+      width: 100%;
+      button {
+        width: 100%;
+        background: inherit;
+        border: unset;
+        font-size: 1.2em;
+        color: var(--bluegray-50);
+        &:hover,
+        &:focus {
+          color: white;
+          background: var(--bluegray-700);
+        }
+        ::ng-deep .p-button-label {
+          visibility: hidden;
+          opacity: 0;
+          text-align: left;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .logo-element {
+    background: var(--surface-0);
+    border-right: 1px solid var(--surface-d);
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: padding 0.2s ease;
+    box-shadow: var(--card-shadow);
+    img.client {
+      width: var(--navbar-width);
+      padding: 10px;
+    }
+    img.logiweb {
+      margin-left: 1em;
+      visibility: hidden;
+      opacity: 0;
+      margin: auto;
+    }
+  }
+
+  ::ng-deep {
+    a:focus,
+    button:focus {
+      outline: none !important;
+      box-shadow: unset;
+    }
+  }
+
+  ::ng-deep .p-panelmenu {
+    padding: 0 1em;
+
+    .p-panelmenu-header > a {
+      span:first-child {
+        font-size: 1.2rem;
+      }
+      color: var(--bluegray-100);
+    }
+
+    .p-panelmenu-panel {
+      margin-top: 0.5em;
+
+      .p-highlight a.p-panelmenu-header-link {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom: unset !important;
+        border: 1px solid var(--bluegray-600);
+      }
+
+      .p-panelmenu-content {
+        background: var(--bluegray-800);
+        border-top: unset;
+        overflow: hidden;
+        padding: 0px;
+        color: white;
+        border-color: var(--bluegray-600);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        a {
+          transition: background 200ms ease;
+          > * {
+            color: var(--bluegray-50);
+          }
+          &:hover {
+            color: white;
+            background: var(--bluegray-700);
+          }
+        }
+      }
+
+      .p-highlight a.p-panelmenu-header-link,
+      a.p-panelmenu-header-link:hover {
+        background: var(--bluegray-800);
+        color: white;
+      }
+      a.p-panelmenu-header-link {
+        background: inherit;
+        transition: background 0.2s ease;
+        border-radius: 10px;
+        border: unset;
+      }
+    }
+
+    .p-menuitem-text,
+    .pi-chevron-right,
+    .pi-chevron-down {
+      visibility: hidden;
+      opacity: 0;
+      white-space: nowrap;
+      font-weight: 400;
+    }
+
+    .pi-chevron-right,
+    .pi-chevron-down {
+      order: 3;
+      margin-left: auto;
+    }
+  }
+
+  &.navbar-active {
+    width: var(--navbar-width-active);
+
+    .logo-element {
+      justify-content: flex-start;
+      padding: 0 1em;
+      img.logiweb {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
+    }
+    ::ng-deep .p-panelmenu {
+      .p-menuitem-text,
+      .pi-chevron-right,
+      .pi-chevron-down {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
+    }
+    ::ng-deep button .p-button-label {
+      visibility: visible !important;
+      opacity: 1 !important;
+      transition: opacity 0.2s ease;
+    }
+  }
+}

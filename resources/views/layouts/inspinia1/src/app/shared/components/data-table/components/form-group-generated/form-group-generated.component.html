@@ -1,0 +1,18 @@
+<div [formGroup]="formGroup" class="form">
+  <ng-container [ngSwitch]="formConfig[key].type" *ngFor="let key of keyOfFormConfig">
+    <div class="form-group" *ngSwitchCase="'string'">
+      <label [for]="key">{{formConfig[key].label}}</label>
+      <input [type]="formConfig[key].type" pInputText [id]="key" [formControlName]="key" />
+    </div>
+    <div class="form-group" *ngSwitchCase="'boolean'">
+      <p-toggleButton [formControlName]="key" [onIcon]="'pi pi-check'" offIcon="pi pi-times" [onLabel]="formConfig[key].label"
+        [offLabel]="formConfig[key].label">
+      </p-toggleButton>
+    </div>
+    <app-form-group-generated *ngSwitchCase="'object'" [formConfig]="formConfig[key].children"
+      [formGroup]="controlAsFormGroup(formGroup.get(key))">
+    </app-form-group-generated>
+  </ng-container>
+  <div class="form-group">
+  </div>
+</div>

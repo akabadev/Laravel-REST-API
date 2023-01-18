@@ -1,0 +1,167 @@
+[
+    {
+        "label": "Accueil",
+        "page_code": "Accueil",
+        "profile_codes": [
+            "ADMIN",
+            "UP_ADMIN",
+            "CUSTOMER_ADMIN",
+            "CUSTOMER_MANAGER",
+            "SERVICE_MANAGER"
+        ],
+        "payload": {
+            "icon": "pi pi-home",
+            "route": "/home"
+        }
+    },
+    {
+        "label": "Précommande",
+        "page_code": "Précommande",
+        "profile_codes": [
+            "ADMIN",
+            "UP_ADMIN",
+            "CUSTOMER_ADMIN",
+            "CUSTOMER_MANAGER",
+            "SERVICE_MANAGER"
+        ],
+        "payload": {
+            "icon": "pi pi-shopping-cart",
+            "route": "/auth/forgot-password"
+        }
+    },
+    {
+        "label": "Historique",
+        "page_code": "Historique",
+        "profile_codes": [
+            "ADMIN",
+            "UP_ADMIN",
+            "CUSTOMER_ADMIN",
+            "CUSTOMER_MANAGER",
+            "SERVICE_MANAGER"
+        ],
+        "payload": {
+            "icon": "pi pi-list",
+            "route": "/auth/forgot-password"
+        }
+    },
+    {
+        "label": "Gestion",
+        "page_code": "Gestion",
+        "profile_codes": [
+            "ADMIN",
+            "UP_ADMIN",
+            "CUSTOMER_ADMIN",
+            "CUSTOMER_MANAGER",
+            "SERVICE_MANAGER"
+        ],
+        "directory": true,
+        "payload": {
+            "icon": "pi pi-folder"
+        },
+        "items": [
+            {
+                "label": "Salariés Bénéficiaires",
+                "page_code": "Salariés Bénéficiaires",
+                "profile_codes": [
+                    "ADMIN",
+                    "UP_ADMIN",
+                    "CUSTOMER_ADMIN",
+                    "CUSTOMER_MANAGER",
+                    "SERVICE_MANAGER"
+                ],
+                "payload": {
+                    "icon": "pi pi-users",
+                    "route": "/home/beneficiaries"
+                }
+            }
+        ]
+    },
+    {
+        "label": "Administration",
+        "page_code": "Administration",
+        "profile_codes": [
+            "ADMIN",
+            "UP_ADMIN",
+            "CUSTOMER_ADMIN",
+            "CUSTOMER_MANAGER",
+            "SERVICE_MANAGER"
+        ],
+        "payload": {
+            "icon": "pi pi-cog"
+        },
+        "items": [
+            {
+                "label": "Utilisateurs",
+                "page_code": "Utilisateurs",
+                "profile_codes": [
+                    "ADMIN",
+                    "UP_ADMIN",
+                    "CUSTOMER_ADMIN",
+                    "CUSTOMER_MANAGER",
+                    "SERVICE_MANAGER"
+                ],
+                "payload": {
+                    "icon": "pi pi-users",
+                    "route": "/home/users"
+                }
+            },
+            {
+                "label": "Comptes Clients",
+                "page_code": "Clients",
+                "profile_codes": [
+                    "ADMIN",
+                    "UP_ADMIN"
+                ],
+                "payload": {
+                    "icon": "pi pi-users",
+                    "route": "/home/users"
+                }
+            },
+            {
+                "label": "Services",
+                "page_code": "Services",
+                "profile_codes": [
+                    "ADMIN",
+                    "UP_ADMIN",
+                    "CUSTOMER_ADMIN",
+                    "CUSTOMER_MANAGER",
+                    "SERVICE_MANAGER"
+                ],
+                "payload": {
+                    "icon": "pi pi-users",
+                    "route": "/home/services"
+                }
+            }
+        ]
+    },
+    {
+        "label": "Aide / FAQ",
+        "page_code": "Aide / FAQ",
+        "profile_codes": [
+            "ADMIN",
+            "UP_ADMIN",
+            "CUSTOMER_ADMIN",
+            "CUSTOMER_MANAGER",
+            "SERVICE_MANAGER"
+        ],
+        "payload": {
+            "icon": "pi pi-comments",
+            "route": "/auth/forgot-password"
+        }
+    },
+    {
+        "label": "Quitter",
+        "page_code": "Quitter",
+        "profile_codes": [
+            "ADMIN",
+            "UP_ADMIN",
+            "CUSTOMER_ADMIN",
+            "CUSTOMER_MANAGER",
+            "SERVICE_MANAGER"
+        ],
+        "payload": {
+            "icon": "pi pi-sign-out",
+            "route": "/auth/logout"
+        }
+    }
+]

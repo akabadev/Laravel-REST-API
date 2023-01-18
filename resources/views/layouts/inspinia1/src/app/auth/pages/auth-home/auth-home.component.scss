@@ -1,0 +1,82 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  background: var(--surface-0);
+  padding: 1em;
+  box-shadow: var(--card-shadow);
+  border-radius: 5px;
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1em;
+}
+
+.up-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.bg-home1 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img1.jpg);
+}
+.bg-home2 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img2.jpg);
+}
+.bg-home3 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img3.jpg);
+}
+.bg-home4 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img4.jpg);
+}
+.bg-home5 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img5.jpg);
+}
+.bg-home6 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img6.jpg);
+}
+.bg-home7 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img7.jpg);
+}
+.bg-home8 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img8.jpg);
+}
+.bg-home9 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img9.jpg);
+}
+.bg-home10 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img10.jpg);
+}
+.bg-home11 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img11.jpg);
+}
+.bg-home12 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img12.jpg);
+}
+.bg-home13 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img13.jpg);
+}
+.bg-home14 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img14.jpg);
+}
+.bg-home15 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img15.jpg);
+}
+.bg-home16 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img16.jpg);
+}
+.bg-home17 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img17.jpg);
+}
+.bg-home18 {
+  background-image: url(http://www.client.cheque-dejeuner.com/fw/interfaces/inspinia/images/bg/img18.jpg);
+}

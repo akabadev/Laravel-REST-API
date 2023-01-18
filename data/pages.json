@@ -1,0 +1,94 @@
+[
+    {
+        "code": "Accueil",
+        "name": "Accueil",
+        "description": "Page d'Accueil",
+        "payload": {
+            "config": null
+        }
+    },
+    {
+        "code": "Précommande",
+        "name": "Précommande",
+        "description": "Précommande",
+        "payload": {
+            "config": "orders.json"
+        }
+    },
+    {
+        "code": "Historique",
+        "name": "Historique",
+        "description": "Historique",
+        "payload": {
+            "config": "archives.json"
+        }
+    },
+    {
+        "code": "Gestion",
+        "name": "Gestion",
+        "description": "Gestion",
+        "payload": {
+            "config": null
+        },
+        "items": [
+            {
+                "code": "Salariés Bénéficiaires",
+                "name": "Salariés Bénéficiaires",
+                "description": "Salariés Bénéficiaires",
+                "payload": {
+                    "config": "beneficiaries.json"
+                }
+            }
+        ]
+    },
+    {
+        "code": "Administration",
+        "name": "Administration",
+        "description": "Administration",
+        "payload": {
+            "config": null
+        },
+        "items": [
+            {
+                "code": "Utilisateurs",
+                "name": "Utilisateurs",
+                "description": "Gestion des Utilisateurs",
+                "payload": {
+                    "config": "users.json"
+                }
+            },
+            {
+                "code": "Clients",
+                "name": "Comptes Clients",
+                "description": "Gestion des Comptes Clients",
+                "payload": {
+                    "config": "customers.json"
+                }
+            },
+            {
+                "code": "Services",
+                "name": "Services",
+                "description": "Gestion des Services",
+                "payload": {
+                    "config": "services.json"
+                }
+            }
+        ]
+    },
+    {
+        "code": "Aide / FAQ",
+        "name": "Aide / FAQ",
+        "description": "Aide / FAQ",
+        "payload": {
+            "config": null
+        }
+    },
+    {
+        "code": "Quitter",
+        "name": "Quitter",
+        "description": "Quitter",
+        "payload": {
+            "config": null
+        }
+    }
+]

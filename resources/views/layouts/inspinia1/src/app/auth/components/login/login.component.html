@@ -1,0 +1,31 @@
+<div class="modal-body animated fadeInDown">
+  <form (ngSubmit)="onSubmit()" #f="ngForm" [formGroup]="form">
+
+    <div class="form-group" [class.has-error]="form.controls.email.touched && form.controls.email.errors">
+      <label for="email">Adresse email</label>
+      <input pInputText type="email" class="form-control" id="email" formControlName="email" required
+        autocomplete="email"
+        [ngClass]="{'ng-invalid ng-dirty': form.controls.email.touched && form.controls.email.errors}" />
+      <p role="alert" *ngIf="form.controls.email.touched && form.controls.email.hasError('required')" class="p-error">
+        L'email est requis
+      </p>
+      <p role="alert" *ngIf="form.controls.email.touched && form.controls.email.hasError('email')" class="p-error">
+        Format d'email invalide
+      </p>
+    </div>
+
+
+    <div class="form-group" [class.has-error]="form.controls.password.touched && form.controls.password.errors">
+      <label for="password">Mot de passe</label>
+      <input pInputText type="password" class="form-control" id="password" formControlName="password" required
+        autocomplete="current-password"
+        [ngClass]="{'ng-invalid ng-dirty': form.controls.password.touched && form.controls.password.errors}" />
+      <p role="alert" *ngIf="form.controls.password.touched && form.controls.password.hasError('required')"
+        class="p-error">
+        mot de passe requis
+      </p>
+    </div>
+    <button pButton icon="pi pi-check" label="Valider" type="submit"></button>
+    <a class="forgot-password" [routerLink]="['/auth/forgot-password']">Mot de passe oublié?</a>
+  </form>
+</div>

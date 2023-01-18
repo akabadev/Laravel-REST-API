@@ -1,0 +1,30 @@
+.addEditForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  .two-col{
+    grid-column: span 2;
+  }
+
+  ::ng-deep .p-togglebutton,
+  p-toggleButton {
+    width: 100%;
+  }
+}
+
+::ng-deep.p-dialog .p-dialog-footer button {
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  ::ng-deep .p-dialog {
+    width: 100vw;
+  }
+  .form {
+    grid-template-columns: 1fr;
+    .two-col {
+      grid-column: 1;
+    }
+  }
+}

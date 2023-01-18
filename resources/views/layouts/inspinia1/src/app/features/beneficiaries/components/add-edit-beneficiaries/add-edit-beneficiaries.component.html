@@ -1,0 +1,51 @@
+<p-dialog [(visible)]="display" [header]="(beneficiary ? 'Modification' : 'Ajout') + ' d\'un bénéficiaire'"
+  [modal]="true" [maximizable]="true" appendTo="body" (onHide)="canceled.emit()"
+  [breakpoints]="[{'960px': '75vw', '640px': '100vw'}]">
+  <ng-template pTemplate="content">
+    <form (ngSubmit)="submit()" [formGroup]="beneficiaryForm" class="form">
+      <div class="form-group">
+        <label for="name">Code</label>
+        <input type="text" pInputText id="code" formControlName="code"
+          [ngClass]="{'ng-invalid ng-dirty': beneficiaryForm.controls.code.touched && beneficiaryForm.controls.code.errors}" />
+        <p class="p-error"
+          *ngIf="beneficiaryForm.controls.code.touched && beneficiaryForm.controls.code.hasError('required')">Ce champ
+          est requis</p>
+      </div>
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" pInputText id="last_name" formControlName="last_name"
+          [ngClass]="{'ng-invalid ng-dirty': beneficiaryForm.controls.last_name.touched && beneficiaryForm.controls.last_name.errors}" />
+        <p class="p-error"
+          *ngIf="beneficiaryForm.controls.last_name.touched && beneficiaryForm.controls.last_name.hasError('required')">Ce
+          champ est requis</p>
+      </div>
+      <div class="form-group">
+        <label for="name">Prénom</label>
+        <input type="text" pInputText id="first_name" formControlName="first_name"
+          [ngClass]="{'ng-invalid ng-dirty': beneficiaryForm.controls.first_name.touched && beneficiaryForm.controls.first_name.errors}" />
+        <p class="p-error"
+          *ngIf="beneficiaryForm.controls.first_name.touched && beneficiaryForm.controls.first_name.hasError('required')">Ce
+          champ est requis</p>
+      </div>
+      <div class="form-group two-col">
+        <label for="name">Email</label>
+        <input type="text" pInputText id="email" formControlName="email"
+          [ngClass]="{'ng-invalid ng-dirty': beneficiaryForm.controls.email.touched && beneficiaryForm.controls.email.errors}" />
+        <p class="p-error"
+          *ngIf="beneficiaryForm.controls.email.touched && beneficiaryForm.controls.email.hasError('required')">Ce
+          champ est requis</p>
+        <p class="p-error"
+          *ngIf="beneficiaryForm.controls.email.touched && beneficiaryForm.controls.email.hasError('email')">Le
+          format n'est pas correct</p>
+      </div>
+      <p-toggleButton formControlName="active" [onIcon]="'pi pi-check'" offIcon="pi pi-times" onLabel="Actif"
+        offLabel="Inactif">
+      </p-toggleButton>
+    </form>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-text m-r"
+      (click)="canceled.emit"></button>
+    <button pButton pRipple label="Valider" icon="pi pi-check" (click)="submit()" class="p-button-text"></button>
+  </ng-template>
+</p-dialog>

@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~primeng/resources/primeng.min.css';
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import 'app/styles/theme';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+}
+
+.m-r {
+  margin-right: 10px;
+}

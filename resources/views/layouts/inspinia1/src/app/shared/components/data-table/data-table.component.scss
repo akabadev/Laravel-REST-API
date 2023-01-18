@@ -1,0 +1,51 @@
+@import '../../../styles/table-page';
+
+::ng-deep .p-togglebutton.p-button {
+  background: inherit;
+  border: unset;
+  color: red;
+  transition: unset;
+
+  .toggleButton {
+    margin: auto;
+  }
+  .p-button-icon-left,
+  .p-button-icon-right {
+    color: #d32f2f;
+  }
+  &.p-highlight {
+    background: inherit;
+    border: unset;
+    color: green;
+
+    .p-button-icon-left,
+    .p-button-icon-right {
+      color: green;
+    }
+  }
+
+  &:hover {
+
+    &.p-highlight {
+      background: inherit;
+      border: unset;
+      color: green;
+      .p-button-icon-left,
+      .p-button-icon-right {
+        color: green;
+      }
+    }
+  }
+
+  &:not(.p-disabled):not(.p-highlight):hover {
+    color: #d32f2f;
+    .p-button-icon-left,
+    .p-button-icon-right {
+      color: #d32f2f;
+    }
+  }
+}
+
+::ng-deep td span.p-button-icon{
+  font-size: 1.15em !important;
+}

@@ -1,0 +1,13 @@
+<div class="table-filters">
+  <div *ngFor="let col of tableConfig.columns">
+    <ng-container [ngSwitch]="col.type">
+      <div class="p-float-label" *ngSwitchCase="'string'">
+        <input [id]="'float-' + col.field" type="text" [(ngModel)]="filter[col.field]" (ngModelChange)="onChanges()" pInputText>
+        <label [for]="'float-' + col.field">{{col.header}}</label>
+      </div>
+      <div *ngSwitchCase="'boolean'">
+        <p-triStateCheckbox [label]="col.header" [(ngModel)]="filter[col.field]" (ngModelChange)="onChanges()"></p-triStateCheckbox>
+      </div>
+    </ng-container>
+  </div>
+</div>

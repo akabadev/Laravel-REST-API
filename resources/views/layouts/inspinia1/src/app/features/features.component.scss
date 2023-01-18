@@ -1,0 +1,34 @@
+@import '../styles/variables';
+
+#app {
+  display: grid;
+  grid-template:
+    'topbar' auto
+    'pages' 1fr
+    /* 'footer' auto */
+    / 1fr;
+  height: 100vh;
+  margin-left: var(--navbar-width);
+  transition: margin-left 0.3s ease;
+
+  background: var(--surface-b);
+  overflow: hidden;
+
+  &.menuFixed {
+    margin-left: var(--navbar-width-active);
+  }
+
+  app-topbar {
+    grid-area: topbar;
+  }
+
+  .pages {
+    overflow: auto;
+    padding: 1em;
+    grid-area: pages;
+  }
+
+  app-footer {
+    grid-area: footer;
+  }
+}

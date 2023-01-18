@@ -1,0 +1,133 @@
+::ng-deep .table-page {
+  .p-column-filter .p-column-filter-clear-button {
+    display: none;
+  }
+  .action-header {
+    display: flex;
+    gap: 5px;
+  }
+  .header-left {
+    display: flex;
+    h3 {
+      font-size: 1em;
+    }
+    button {
+      margin-left: 10px;
+      padding: 0 1em;
+    }
+  }
+
+  .align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .p-card .p-card-body,
+  .p-card .p-card-content {
+    padding: 0px;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+  .p-input-icon-left > input {
+    padding-left: 2rem;
+    font-weight: 500;
+  }
+
+  .p-paginator {
+    .p-paginator-current {
+      margin-left: auto;
+    }
+  }
+
+  .p-progressbar {
+    height: 0.5em;
+    background-color: #d8dadc;
+
+    .p-progressbar-value {
+      background-color: #607d8b;
+    }
+  }
+
+  .table-header {
+    display: flex;
+    flex-direction: column;
+    .table-infos {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.5em;
+    }
+  }
+
+  .p-datatable {
+    .p-datatable-header {
+      padding: 0.5em 1em;
+      text-align: left;
+      background: var(--surface-0);
+    }
+
+    .p-paginator {
+      padding: 0.5em 0;
+    }
+
+    .p-datatable-thead > tr > th {
+      text-align: center;
+      padding: 0.5rem 0.5rem;
+    }
+
+    .p-datatable-tbody > tr > td {
+      cursor: auto;
+      padding: 0.2em 1rem;
+    }
+
+    .p-dropdown-label:not(.p-placeholder) {
+      text-transform: uppercase;
+    }
+  }
+
+  .p-w-100 {
+    width: 100%;
+  }
+
+  /* Responsive */
+  .p-datatable-tbody > tr > td .p-column-title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .p-datatable {
+    .p-datatable-thead > tr > th,
+    .p-datatable-tfoot > tr > td {
+      display: none !important;
+
+      .p-datatable-tbody > tr {
+        border-bottom: 1px solid var(--layer-2);
+
+        > td {
+          text-align: left;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          border: 0 none;
+
+          .p-column-title {
+            min-width: 30%;
+            display: inline-block;
+            font-weight: bold;
+          }
+
+          p-progressbar {
+            width: 100%;
+          }
+
+          &:last-child {
+            border-bottom: 1px solid var(--surface-d);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<div id="navbar" [class.navbar-active]="hovered || userPreferencesService.menuState === 'opened'">
+  <nav role="navigation">
+    <div class="logo-element">
+      <img class="client" src="assets/img/logo.jpg">
+      <img class="logiweb" src="assets/img/logiweb_b_1.png" align="center">
+      <button pButton [icon]="userPreferencesService.menuState === 'opened' ? 'pi pi-lock' : 'pi pi-unlock'"
+        (click)="toggleMenuState()" class="p-button-text p-button-lg p-button-secondary"></button>
+    </div>
+    <p-panelMenu [model]="navigationItems$ | async" [multiple]="false"></p-panelMenu>
+    <div class="user">
+      <p-menu #menu [popup]="true" [model]="userItems"></p-menu>
+      <button pButton icon="pi pi-user" [label]="authService.user?.name" (click)="menu.toggle($event)"></button>
+    </div>
+
+  </nav>
+</div>

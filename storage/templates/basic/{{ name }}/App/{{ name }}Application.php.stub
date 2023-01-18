@@ -1,0 +1,17 @@
+<?php
+
+namespace Tenant\{{ name }}\App;
+
+use App\Contracts\Application\Application;
+
+class {{ name }}Application extends Application
+{
+
+    /**
+     * @return array
+     */
+    public function getConfiguration(): array
+    {
+        return [];
+    }
+}

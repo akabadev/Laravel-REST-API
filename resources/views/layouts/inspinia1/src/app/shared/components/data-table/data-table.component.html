@@ -1,0 +1,74 @@
+<p-card class="table-page" *ngIf="tableConfig">
+  <p-table #dt [columns]="tableConfig.columns" [value]="datas" [showCurrentPageReport]="true"
+    [loading]="datasLoading" [autoLayout]="true" styleClass="p-datatable-gridlines" [resizableColumns]="true"
+    [currentPageReportTemplate]="'de {first} à {last} sur {totalRecords} ' + tableConfig.ressourceLabel"
+    (sortFunction)="sortChanges($event)" [customSort]="true" sortMode="multiple">
+    <ng-template pTemplate="caption">
+      <div class="table-header">
+        <div class="table-infos">
+          <div class="header-left">
+            <h3>
+              Liste des {{tableConfig.ressourceLabel}}s
+            </h3>
+            <button pButton [label]="tableConfig?.actions?.create?.label" icon="pi pi-plus" (click)="addData = true"
+              *ngIf="tableConfig?.actions?.create"></button>
+          </div>
+          <div class="action-header">
+            <button type="button" pButton pRipple icon="pi pi-file-o" (click)="dt.exportCSV()" pTooltip="CSV"
+              tooltipPosition="bottom"></button>
+            <button type="button" pButton pRipple icon="pi pi-file-excel"
+              (click)="exportService.exportExcel(datas, 'export_utilisateurs')" class="p-button-success" pTooltip="XLS"
+              tooltipPosition="bottom"></button>
+            <button type="button" pButton pRipple icon="pi pi-file-pdf"
+              (click)="exportService.exportPdf(excelColumns, datas, 'export_utilisateurs')" class="p-button-warning"
+              pTooltip="PDF" tooltipPosition="bottom"></button>
+          </div>
+        </div>
+        <app-list-filters [tableConfig]="tableConfig" (filterChanges)="filterChanges($event)"></app-list-filters>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of tableConfig.columns" [pSortableColumn]="col.field" pResizableColumn>
+          {{col.header}}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+        <th *ngIf="showActions">
+          Actions
+        </th>
+      </tr>
+
+    </ng-template>
+    <ng-template pTemplate="body" let-data>
+      <tr>
+        <td *ngFor="let col of tableConfig.columns">
+          <div *ngIf="col.type !== 'boolean'; else toggleData">
+            {{col.type === 'object' ? data[col.field]?.tableDisplayValue : data[col.field]}}
+          </div>
+          <ng-template #toggleData>
+            <div class="align-center">
+              <p-toggleButton [(ngModel)]="data[col.field]" [onIcon]="'pi pi-check-circle'" offIcon="pi pi-times-circle"
+                styleClass="p-button-text p-button-rounded" class="toggleButton">
+              </p-toggleButton>
+            </div>
+          </ng-template>
+        </td>
+        <td *ngIf="showActions">
+          <div class="align-center actions">
+            <button pButton icon="pi pi-trash" class="p-button-danger p-button-sm p-button-rounded p-button-text"
+              (click)="deleteData(reserializeData(data))" *ngIf="tableConfig.actions.delete" [pTooltip]="tableConfig.actions.delete.label" tooltipPosition="bottom"></button>
+            <button pButton icon="pi pi-pencil" (click)="dataToUpdate = data;"
+              class="p-button-sm p-button-rounded p-button-text" *ngIf="tableConfig.actions.update" [pTooltip]="tableConfig.actions.update.label" tooltipPosition="bottom" ></button>
+          </div>
+        </td>
+
+      </tr>
+
+    </ng-template>
+  </p-table>
+  <p-paginator [totalRecords]="request?.data?.total" [rows]="request?.data?.per_page"
+    (onPageChange)="pageChanges($event)"></p-paginator>
+  <app-add-edit-data [tableConfig]="tableConfig" (canceled)="addData = null; dataToUpdate = false"
+    (saveData)="saveData($event)" [data]="dataToUpdate" [display]="addData || !!dataToUpdate"></app-add-edit-data>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+</p-card>
